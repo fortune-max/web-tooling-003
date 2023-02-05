@@ -1,35 +1,35 @@
-import React from 'react';
+import React from "react";
 
 type todo = {
     text: string;
     isCompleted: boolean;
-}
+};
 
 type TodoItemProps = {
     todo: todo;
     index: number;
     completeTodo: (index: number) => void;
     removeTodo: (index: number) => void;
-}
+};
 
 const TodoItem = ({ todo, index, completeTodo, removeTodo }: TodoItemProps) => {
     return (
         <div
-        className="todo-item"
-        style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+            className="todo-item"
+            style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
         >
-        {todo.text}
-        <div>
-            <button onClick={() => completeTodo(index)}>Complete</button>
-            <button onClick={() => removeTodo(index)}>x</button>
-        </div>
+            {todo.text}
+            <div>
+                <button onClick={() => completeTodo(index)}>Complete</button>
+                <button onClick={() => removeTodo(index)}>x</button>
+            </div>
         </div>
     );
 };
 
 type TodoFormProps = {
     addTodo: (text: string) => void;
-}
+};
 
 const TodoForm = ({ addTodo }: TodoFormProps) => {
     const [value, setValue] = React.useState("");
@@ -47,7 +47,7 @@ const TodoForm = ({ addTodo }: TodoFormProps) => {
                 type="text"
                 className="input"
                 value={value}
-                onChange={e => setValue(e.target.value)}
+                onChange={(e) => setValue(e.target.value)}
             />
         </form>
     );
@@ -90,4 +90,4 @@ const Todo = () => {
     );
 };
 
-export {Todo, TodoForm, TodoItem};
+export { Todo, TodoForm, TodoItem };
