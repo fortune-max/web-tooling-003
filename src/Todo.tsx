@@ -90,4 +90,4 @@ const Todo = () => {
     );
 };
 
-export { Todo, TodoForm, TodoItem };
+export default Todo;
